@@ -2,7 +2,7 @@
 
 As a proprietor
 So that customers can find my restaurant on Snyelp
-I would like to add a new entry, specifying a name for my restaurant
+I would like to create a new entry, specifying a name for my restaurant
 
 As a proprietor
 So that I can inform potential customers about my restaurant through Snyelp
