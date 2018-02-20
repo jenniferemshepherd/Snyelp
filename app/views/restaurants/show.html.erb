@@ -8,29 +8,34 @@
   <%= @restaurant.description %>
 </p>
 
+<h2>Reviews</h2>
+<%= render @restaurant.reviews %>
+
 <h2>Add a review:</h2>
 <%= form_with(model: [ @restaurant, @restaurant.reviews.build ], local: true) do |form| %>
   <p>
     <%= form.label :reviewer %><br>
     <%= form.text_field :reviewer %>
   </p>
+
   <p>
-    <%= form.label :comment %><br>
+    <%= form.label :review %><br>
     <%= form.text_area :comment %>
+    <!-- <%= form.text_area :rating %> -->
   </p>
 
   <p>
     <%= form.label :rating %><br>
-    <%= radio_button_tag(:rating, 1) %>
-    <%= label_tag(:rating_1, "1") %>
-    <%= radio_button_tag(:rating, 2) %>
-    <%= label_tag(:rating_2, "2") %>
-    <%= radio_button_tag(:rating, 3) %>
-    <%= label_tag(:rating_3, "3") %>
-    <%= radio_button_tag(:rating, 4) %>
-    <%= label_tag(:rating_4, "4") %>
-    <%= radio_button_tag(:rating, 5) %>
-    <%= label_tag(:rating_5, "5") %>
+    <%= form.radio_button(:rating, 1) %>
+    <%= label_tag(:rating, "1") %>
+    <%= form.radio_button(:rating, 2) %>
+    <%= label_tag(:rating, "2") %>
+    <%= form.radio_button(:rating, 3) %>
+    <%= label_tag(:rating, "3") %>
+    <%= form.radio_button(:rating, 4) %>
+    <%= label_tag(:rating, "4") %>
+    <%= form.radio_button(:rating, 5) %>
+    <%= label_tag(:rating, "5") %>
   </p>
 
   <p>
