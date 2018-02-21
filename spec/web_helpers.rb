@@ -4,3 +4,12 @@ def create_restaurant(name = "Hello extreme delight maybe4u?", description = "ex
   fill_in('restaurant[description]', with: description)
   click_button 'Create Restaurant'
 end
+
+def create_review(score = "1")
+  fill_in('review[reviewer]', with: "Jennifer")
+  fill_in('review[comment]', with: "what a pile of shit")
+  within("div##{score}") do
+    choose('review[rating]')
+  end
+  click_button 'Create Review'
+end

@@ -10,12 +10,7 @@ RSpec.describe "Single restaurant view", :type => :feature do
 
     it 'review' do
       create_restaurant
-      fill_in('review[reviewer]', with: "Jennifer")
-      fill_in('review[comment]', with: "what a pile of shit")
-      within('div#1') do
-        choose('review[rating]')
-      end
-      click_button 'Create Review'
+      create_review
       expect(page).to have_content 'Reviewer: Jennifer'
       expect(page).to have_content 'Rating: 1'
       expect(page).to have_content 'Comment: what a pile of shit'
