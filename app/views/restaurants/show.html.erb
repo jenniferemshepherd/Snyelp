@@ -21,21 +21,31 @@
   <p>
     <%= form.label :review %><br>
     <%= form.text_area :comment %>
-    <!-- <%= form.text_area :rating %> -->
+    <%= form.text_area :rating %>
   </p>
 
   <p>
     <%= form.label :rating %><br>
-    <%= form.radio_button(:rating, 1) %>
-    <%= label_tag(:rating, "1") %>
-    <%= form.radio_button(:rating, 2) %>
-    <%= label_tag(:rating, "2") %>
-    <%= form.radio_button(:rating, 3) %>
-    <%= label_tag(:rating, "3") %>
-    <%= form.radio_button(:rating, 4) %>
-    <%= label_tag(:rating, "4") %>
-    <%= form.radio_button(:rating, 5) %>
-    <%= label_tag(:rating, "5") %>
+    <div id="1">
+      <%= form.radio_button(:rating, 1) %>
+      <%= label_tag(:rating, "1") %>
+    </div>
+    <div id="2">
+      <%= form.radio_button(:rating, 2) %>
+      <%= label_tag(:rating, "2") %>
+    </div>
+    <div id="3">
+      <%= form.radio_button(:rating, 3) %>
+      <%= label_tag(:rating, "3") %>
+    </div>
+    <div id="4">
+      <%= form.radio_button(:rating, 4) %>
+      <%= label_tag(:rating, "4") %>
+    </div>
+    <div id="5">
+      <%= form.radio_button(:rating, 5) %>
+      <%= label_tag(:rating, "5") %>
+    </div>
   </p>
 
   <p>
