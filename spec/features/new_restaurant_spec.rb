@@ -2,6 +2,11 @@ RSpec.describe "Enter new restaurant view", :type => :feature do
 
   describe "the form for entering a new restaurant" do
 
+		before do
+  		user = User.create email: 'tansaku@gmail.com', password: '12345678', password_confirmation: '12345678'
+  		login_as user
+		end
+
     it 'is titled New restaurant' do
       visit '/'
 			click_link('New restaurant')

@@ -11,47 +11,50 @@
 <h2>Reviews</h2>
 <%= render @restaurant.reviews %>
 
-<h2>Add a review:</h2>
-<%= form_with(model: [ @restaurant, @restaurant.reviews.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :reviewer %><br>
-    <%= form.text_field :reviewer %>
-  </p>
+<% if @restaurant.user != current_user %>
+	<h2>Add a review:</h2>
+	<%= form_with(model: [ @restaurant, @restaurant.reviews.build ], local: true) do |form| %>
+  	<p>
+    	<%= form.label :reviewer %><br>
+    	<%= form.text_field :reviewer %>
+  	</p>
 
-  <p>
-    <%= form.label :review %><br>
-    <%= form.text_area :comment %>
-    <%= form.text_area :rating %>
-  </p>
+  	<p>
+    	<%= form.label :review %><br>
+    	<%= form.text_area :comment %><br>
+			<%= form.label :email %><br>
+			<%= form.text_area :email %>
+  	</p>
 
-  <p>
-    <%= form.label :rating %><br>
-    <div id="1">
-      <%= form.radio_button(:rating, 1) %>
-      <%= label_tag(:rating, "1") %>
-    </div>
-    <div id="2">
-      <%= form.radio_button(:rating, 2) %>
-      <%= label_tag(:rating, "2") %>
-    </div>
-    <div id="3">
-      <%= form.radio_button(:rating, 3) %>
-      <%= label_tag(:rating, "3") %>
-    </div>
-    <div id="4">
-      <%= form.radio_button(:rating, 4) %>
-      <%= label_tag(:rating, "4") %>
-    </div>
-    <div id="5">
-      <%= form.radio_button(:rating, 5) %>
-      <%= label_tag(:rating, "5") %>
-    </div>
-  </p>
+  	<p>
+    	<%= form.label :rating %><br>
+    	<div id="1">
+      	<%= form.radio_button(:rating, 1) %>
+      	<%= label_tag(:rating, "1") %>
+    	</div>
+    	<div id="2">
+      	<%= form.radio_button(:rating, 2) %>
+      	<%= label_tag(:rating, "2") %>
+    	</div>
+    	<div id="3">
+      	<%= form.radio_button(:rating, 3) %>
+      	<%= label_tag(:rating, "3") %>
+    	</div>
+    	<div id="4">
+      	<%= form.radio_button(:rating, 4) %>
+      	<%= label_tag(:rating, "4") %>
+    	</div>
+    	<div id="5">
+      	<%= form.radio_button(:rating, 5) %>
+      	<%= label_tag(:rating, "5") %>
+    	</div>
+  	</p>
 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+  	<p>
+    	<%= form.submit %>
+  	</p>
+		<% end %>
+	<% end %>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

@@ -4,17 +4,21 @@
   <tr>
     <th>Name</th>
     <th>Description</th>
+		<th>Email</th>
   </tr>
 
   <% @restaurant.each do |restaurant| %>
     <tr>
       <td><%= restaurant.name %></td>
       <td><%= restaurant.description %></td>
+			<td><%= restaurant.user.email %></td>
       <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
+			<% if restaurant.user == current_user %>
       <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
       <td><%= link_to 'Remove', restaurant_path(restaurant),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+			<% end %>
     </tr>
   <% end %>
 </table>

@@ -2,11 +2,15 @@ RSpec.describe "Lists the restaurants views", :type => :feature do
 
 	describe "the listing of all restaurants" do
 
+		before do
+			user = User.create email: 'tansaku@gmail.com', password: '12345678', password_confirmation: '12345678'
+			login_as user
+		end
+
 	   it 'is titled List of Restaurants' do
 			visit '/'
  			click_link('New restaurant')
  			create_restaurant
- 			create_review
 			click_link('Back')
 	    expect(page).to have_content "List of Restaurants"
 	   end
@@ -15,7 +19,6 @@ RSpec.describe "Lists the restaurants views", :type => :feature do
 			visit '/'
 			click_link('New restaurant')
 			create_restaurant
-			create_review
 			click_link('Back')
 			expect(page).to have_content "Name"
 		 end
@@ -24,7 +27,6 @@ RSpec.describe "Lists the restaurants views", :type => :feature do
 			visit '/'
 			click_link('New restaurant')
 			create_restaurant
-			create_review
 			click_link('Back')
 			expect(page).to have_content "Description"
 		 end
@@ -33,7 +35,6 @@ RSpec.describe "Lists the restaurants views", :type => :feature do
 		 	visit '/'
 		 	click_link('New restaurant')
 		 	create_restaurant
-		 	create_review
 		 	click_link('Back')
 		 	expect(page).to have_content "Hello extreme delight maybe4u?"
 		 end
@@ -42,7 +43,6 @@ RSpec.describe "Lists the restaurants views", :type => :feature do
 		 	visit '/'
 		 	click_link('New restaurant')
 		 	create_restaurant
-		 	create_review
 		 	click_link('Back')
 		 	expect(page).to have_content "extreme delights straight2u 4 now maybe sometimes"
 		 end
@@ -51,7 +51,6 @@ RSpec.describe "Lists the restaurants views", :type => :feature do
 			visit '/'
 		 	click_link('New restaurant')
 		 	create_restaurant
-		 	create_review
 		 	click_link('Back')
 		 	expect(page).to have_link('Show')
 		 end
@@ -60,7 +59,6 @@ RSpec.describe "Lists the restaurants views", :type => :feature do
 		  visit '/'
 		  click_link('New restaurant')
 		  create_restaurant
-		  create_review
 		  click_link('Back')
 		  expect(page).to have_link('Edit')
 		 end
@@ -69,7 +67,6 @@ RSpec.describe "Lists the restaurants views", :type => :feature do
 		  visit '/'
 		  click_link('New restaurant')
 		  create_restaurant
-		  create_review
 		  click_link('Back')
 		  expect(page).to have_link('Remove')
 		 end

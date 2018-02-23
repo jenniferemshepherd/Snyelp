@@ -34,6 +34,8 @@ RSpec.configure do |config|
 
   config.use_transactional_fixtures = false
 
+	config.include Warden::Test::Helpers
+
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.

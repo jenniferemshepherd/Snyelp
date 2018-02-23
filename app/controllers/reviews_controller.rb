@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
-    def create
+	before_action :authenticate_user!
+
+		def create
       @restaurant = Restaurant.find(params[:restaurant_id])
       @review = @restaurant.reviews.create(review_params)
       redirect_to restaurant_path(@restaurant)
@@ -8,7 +10,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-      params.require(:review).permit(:reviewer,:rating,:comment)
+      params.require(:review).permit(:reviewer, :rating, :comment)
     end
 
 end
