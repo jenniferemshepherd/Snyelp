@@ -3,19 +3,18 @@ Snyelp: Ruby on Rails Yelp Challenge
 
 Brief Summary of Approach
 -------
-We worked as a group this week and set Ground Rules from the off as to how we would work in an Agile environment, exemplifying XP values.
+We worked as a group this week and set Ground Rules from the off as to how we would work in an Agile environment, exemplifying XP values.  This included daily standups in the morning and retros in the evening, with merge parties as appropriate throughout the day.  We mobbed at the start of the week whilst we were initially learning rails and then split into rotating pairs to implement features.
 
 Points for development:
-*
-*
+* CSS for styling
+* Users own their reviews and restaurants - and are limited to where they can post as a result.
 
 Instructions
 -------
 
 * Clone this repository
-* cd takeaway-challenge
-* Run the command 'bundle' in the project directory to ensure you have all the gems
-* To use in irb please comment out the following part of line 2 in messager.rb { if ENV['RUBY_ENV'] == "development" }
+* cd snyelp
+* Run 'bin/rails s' to get the project running on the server and nagivate to it in your choice of browser (local host:3000 is most likely)
 
 User stories
 --------
@@ -48,30 +47,6 @@ As a potential customer
 So that I can choose a restaurant to visit
 I would like to be able to view a list of restaurants with their ratings and reviews
 ```
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 Technologies Used:
 --------
